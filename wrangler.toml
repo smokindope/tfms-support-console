@@ -1,0 +1,16 @@
+name = "tfms-support-console"
+main = "worker/index.js"
+compatibility_date = "2026-06-22"
+workers_dev = true
+
+# This binding is automatically completed by scripts/cloudflare-deploy.mjs.
+# Do not edit database_id by hand unless you already have an existing D1 database.
+[[d1_databases]]
+binding = "DB"
+database_name = "tfms-support-console-db"
+database_id = "cd00898e-9294-4a67-a495-75d5c48fc0f1"
+
+[vars]
+# Leave blank to allow open admin access. Set after deploy for protection:
+# npx wrangler secret put SUPPORT_ADMIN_KEY
+SUPPORT_ADMIN_KEY = "M@ncity2432"

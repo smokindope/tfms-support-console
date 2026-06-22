@@ -1,0 +1,18 @@
+{
+  "name": "tfms-support-console",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "deploy": "node scripts/cloudflare-deploy.mjs",
+    "deploy:cloudflare": "node scripts/cloudflare-deploy.mjs",
+    "cf:deploy": "node scripts/cloudflare-deploy.mjs",
+    "cf:migrate": "wrangler d1 execute tfms-support-console-db --remote --file migrations/0001_initial_schema.sql",
+    "cf:dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}
